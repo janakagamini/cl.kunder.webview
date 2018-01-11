@@ -3,12 +3,12 @@
 module.exports = (function() {
 
 
-  var _show = function(url, successCallback, errorCallback, loading) {
+  var _show = function(url, ignoreArray, successCallback, errorCallback, loading) {
     if(loading){
-      cordova.exec(successCallback, errorCallback, 'WebViewPlugin', 'show', [url, loading]);
+      cordova.exec(successCallback, errorCallback, 'WebViewPlugin', 'show', [url, ignoreArray, loading]);
     }
     else{
-      cordova.exec(successCallback, errorCallback, 'WebViewPlugin', 'show', [url]);
+      cordova.exec(successCallback, errorCallback, 'WebViewPlugin', 'show', [url, ignoreArray]);
     }
   };
 
